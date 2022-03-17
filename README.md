@@ -50,7 +50,7 @@ This function will only work if given an object with a callable `flop` property.
 
 Seen in this way, a type is the concept of describing which values can be safely passed to `flip`, and which will crash.
 
-In essence, the problem is that JavaScript is a [loosely typed and dynamically types language](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures) where we can only see what happens at _runtime_ because JS variables are not directly associated with any particular value type. Furthermore, any variable can be assigned (and re-assigned) values of all types. You'd probably never do this, but consider that the following is valid JS:
+In essence, the problem is that JavaScript is a [loosely and dynamically typed language](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures) where we can only see what happens at _runtime_ because JS variables are not directly associated with any particular value type. Furthermore, any variable can be assigned (and re-assigned) values of all types. You'd probably never do this, but consider that the following is valid JS:
 
 ```js
 let foo = 42;    // foo is now a number
@@ -60,7 +60,9 @@ foo     = true;  // foo is now a boolean
 
 ## An Overview Typescript
 
-While JS provides language primitives like string and number, it doesn’t check that you’ve consistently assigned those primitives. Typesctript does, though. So if you are a JS developer who has written a function that takes a paramater and you have become uneasy with the idea of assuming that the parameter is a number or a string or an object with a particular property (etc.), then Typescript is probably for you because avoiding such problems is the language's goal - it does so by using a static type system to make predictions about what code is expected _before_ a program runs.
+Inspiration for this section has been taken from [TypeScript for JavaScript Programmers](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html).
+
+While JS provides language primitives like string and number, it doesn’t check that you’ve consistently assigned those primitives. Typescript does, though. So if you are a JS developer who has written a function that takes a parameter and you have become uneasy with the idea of assuming that the parameter is a number or a string or an object with a particular property (etc.), then Typescript is probably for you because avoiding such problems is the language's goal - it does so by using a static type system to make predictions about what code is expected _before_ a program runs.
 
 ### Static Type Checking
 
@@ -71,8 +73,6 @@ TS basically adds rules about how different kinds of values can be used, thereby
 _Property 'heigth' does not exist on type '{ width: number; height: number; }'. Did you mean 'height'?_
 
 ### Defining Types
-
-Inspiration for this section has been taken from [TypeScript for JavaScript Programmers](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html).
 
 TypeScript offers all of JavaScript’s features, but includes an additional _type system_ layer on top. When creating a variable and assigning it to a particular value, TypeScript will use the value as its type. Consider the examples from earlier:
 
@@ -232,8 +232,10 @@ const myCanvas = document.getElementById("main_canvas") as HTMLCanvasElement;
 
 ## Exercise
 
+This repo contains a [react](https://reactjs.org/) project that uses Typescript. It was initialised using  _Create React App_ - for more information about adding Typescript when using _Create React App_, see https://create-react-app.dev/docs/adding-typescript/.
+
+To complete the exercise in this repo', do the following:
+
 1. Fork this repository and clone the fork to your machine
 2. Run `npm ci` to install project dependencies
-3. In the [./src](./src) directory you'll find a version of the Todo application that you saw earlier in the course. However, this time, it's using Typescript. Unfortunately, if you run `npm run start`, you'll see a whole bunch of TypeScript errors. Your job is to fix them.
-
-This repo contains a [react](https://reactjs.org/) project that uses Typescript. It was initialised using  _Create React App_ - for more information about adding Typescript to _Create React App_, see https://create-react-app.dev/docs/adding-typescript/.
+3. In the [./src](./src) directory you'll find a version of the Todo application that you saw earlier in the course. However, this time, it's using Typescript. Unfortunately, if you run `npm run start`, you'll see a whole bunch of TypeScript errors. Your job is to fix them
