@@ -230,9 +230,10 @@ For example, if you’re using `document.getElementById`, TypeScript only knows 
 const myCanvas = document.getElementById("main_canvas") as HTMLCanvasElement;
 ```
 
+## Exercise
 
+1. Fork this repository and clone the fork to your machine
+2. Run `npm ci` to install project dependencies
+3. In the [./src](./src) directory you'll find a version of the Todo application that you saw earlier in the course. However, this time, it's using Typescript. Unfortunately, if you run `npm run start`, you'll see a whole bunch of TypeScript errors. Your job is to fix them.
 
-
-
-
-
+This repo contains a [react](https://reactjs.org/) project that uses Typescript. It was initialised using  _Create React App_ - for more information about adding Typescript to _Create React App_, see https://create-react-app.dev/docs/adding-typescript/.
