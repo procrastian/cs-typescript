@@ -46,7 +46,7 @@ function flip(x) {
 }
 ```
 
-This function will only work if given an object with a callable `flop` property. Unfortunately, the only way you can tell for sure whether `flip` contains that property is to call it and see what happens! That makes it hard to predict what code will do before it runs. It also makes code harder to write in the first place! 
+This function will only work if given an object with a callable `flop` property. Unfortunately, the only way you can tell for sure whether _x_ contains that property is to call it and see what happens! That makes it hard to predict what code will do before it runs. It also makes code harder to write in the first place!
 
 Seen in this way, a type is the concept of describing which values can be safely passed to `flip`, and which will crash.
 
@@ -60,13 +60,13 @@ foo     = true;  // foo is now a boolean
 
 ## An Overview Typescript
 
-The 'problem' is that while JS provides language primitives like string and number, it doesn’t check that you’ve consistently assigned those primitives. Typesctript does, though. So if you are a JS developer who has written a function that takes a paramater and you have become uneasy with the idea of assuming that the parameter is a number or a string or an object with a particular property (etc.), then Typescript is probably for you because avoiding such problems is the language's goal - it does so by using a static type system to make predictions about what code is expected _before_ a program runs.
+While JS provides language primitives like string and number, it doesn’t check that you’ve consistently assigned those primitives. Typesctript does, though. So if you are a JS developer who has written a function that takes a paramater and you have become uneasy with the idea of assuming that the parameter is a number or a string or an object with a particular property (etc.), then Typescript is probably for you because avoiding such problems is the language's goal - it does so by using a static type system to make predictions about what code is expected _before_ a program runs.
 
 ### Static Type Checking
 
 TypeScript is a langauge that is a _typed_ superset of Javascript. That means that if you move code from JavaScript to TypeScript, it is guaranteed to run the same way, since the TS compiler never changes the behaviour of your program - it produces the same plain JS, even if its compiler reports that the code has type errors! Hence, if your JS program had a runtime bug, your TS program will include that same bug. However, TS will almost certainly help you identify (and remove) that type error runtime bug. That's because TS features _compile-time_ static type checking, where the _type_ of values used in a program are checked before the progam is _run_, thus avoiding certain kinds of runtime errors.
 
-In essence, TS adds rules about how different kinds of values can be used, thereby increasing the quality of the codebase. For example, the JS program featuring `obj`, above, would produce a _runtime_ error because the variable `obj` does not have the property `heigth`. However, the TypeScript compiler would have identified the error beforehand:
+TS basically adds rules about how different kinds of values can be used, thereby helping to increase the quality of the codebase. For example, the JS program featuring `obj`, above, would produce a _runtime_ error because the variable `obj` does not have the property `heigth`. However, the TypeScript compiler would have identified the error beforehand:
 
 _Property 'heigth' does not exist on type '{ width: number; height: number; }'. Did you mean 'height'?_
 
