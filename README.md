@@ -137,7 +137,18 @@ function deleteUser(user: User) {
 
 ### Extending Primitive Types
 
-TypeScript extends the primitive types available in JavaScript - `any` (allow anything - use sparingly (if at all) because it's essentially an escape hatch from the type system), `unknown` (as opposed to `any`, `unknown` flips the default from permitting everything to permitting (almost) nothing because TypeScript disallows arbitrary operations on values of type `unknown`. Instead, you have to narrow the type of the value you're working with by first performing some sort of type checking. For more on `any` versus `unknown`, see here: https://mariusschulz.com/blog/the-unknown-type-in-typescript). Finally, Tyoescript also includes the types `never` (it’s not possible that this type could happen), and `void` (a function which returns undefined or has no return value) - `never` and `void` are closely related, see here: https://www.tutorialsteacher.com/typescript/typescript-never.
+TypeScript extends the primitive types available in JavaScript - `any` (allow anything - use sparingly (if at all) because it's essentially an escape hatch from the type system), `unknown` (as opposed to `any`, `unknown` flips the default from permitting everything to permitting (almost) nothing because TypeScript disallows arbitrary operations on values of type `unknown`. Instead, you have to narrow the type of the value you're working with by first performing some sort of type checking. For more on `any` versus `unknown`, see here: https://mariusschulz.com/blog/the-unknown-type-in-typescript). Finally, Typescript also includes the types `never` (it’s not possible that this type could happen), and `void` (a function which returns undefined or has no return value) - `never` and `void` are closely related, see here: https://www.tutorialsteacher.com/typescript/typescript-never.
+
+Below shows a [react](https://reactjs.org/) function that has no return value, so declares that the function has the return type `void`. It also shows the use of _Generics_ (`<HTMLFormElement>`), which are described in greater detail, later:
+
+```js
+import { FormEvent } from 'react';
+
+function handleChange(e: FormEvent<HTMLFormElement>): void {
+    e.preventDefault();
+    console.log('You clicked submit.');
+  }
+```
 
 ### Composing Types
 
@@ -232,7 +243,7 @@ const myCanvas = document.getElementById("main_canvas") as HTMLCanvasElement;
 
 ## Exercise
 
-This repo contains a [react](https://reactjs.org/) project that uses Typescript. It was initialised using  _Create React App_ - for more information about adding Typescript when using _Create React App_, see https://create-react-app.dev/docs/adding-typescript/.
+This repo contains a react project that uses Typescript. It was initialised using  _Create React App_ - for more information about adding Typescript when using _Create React App_, see https://create-react-app.dev/docs/adding-typescript/.
 
 To complete the exercise in this repo', do the following:
 
