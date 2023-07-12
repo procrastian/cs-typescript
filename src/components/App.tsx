@@ -5,20 +5,21 @@ import { TodoList } from './TodoList'
 import { TodoType } from './Todo'
 
 import '../styles/styles.css'
+import { Todo } from '../models/todo'
 
 // Define this as an array of TodoType
-const initialTodos = []
+const initialTodos: Todo[] = []
 
 export const App = () => {
   // Initialise this with a correctly defined initialTodos
-  const [todos, setTodos] = useState(undefined);
+  const [todos, setTodos] = useState(initialTodos);
   
   const [todoInput, setTodoInput] = useState('')
   const [showCompletedTodos, setShowCompletedTodos] = useState(true)
 
   //Declare the type of the parameter
   //Declare the type this function returns, too 
-  const addTodo = text => {
+  const addTodo = (text: string) => {
     if (todos.some(todo => todo.text.toLowerCase() === text.toLowerCase())) {
       alert('That todo already exists!')
       return
